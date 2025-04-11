@@ -11,5 +11,5 @@ API2MCP是一个用于封装和管理API服务的工具，支持将各种API服�
 
 ## 功能截图
 
-![配置截图](assets\pic1.png)
+![配置截图](assets/pic1.png)
 
