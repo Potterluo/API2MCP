@@ -1,2 +1,15 @@
 # API2MCP
-API2MCP is a tool used for encapsulating and managing API services. It supports the uniform encapsulation of various API services into standard MCP services, providing a unified SSE-based access method.
+API2MCP是一个用于封装和管理API服务的工具，支持将各种API服务统一封装为标准的MCP服务，提供统一的访问方式。
+
+## 功能特点
+
+- 通过Web界面或配置文件管理API服务
+- 支持多种API认证方式（无认证、Basic认证、Token认证、OAuth认证）
+- 提供标准API、MCP_SSE流式(Web服务器)和MCP_标准输入输出（命令行调用）三种访问方式
+- 内置服务测试功能
+- 完善的日志记录
+
+## 功能截图
+
+![配置截图](assets\pic1.png)
+
