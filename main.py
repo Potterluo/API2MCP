@@ -115,7 +115,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # 挂载SSE服务器
-app.mount("/sse", mcp.sse_app())
+app.mount("/", mcp.sse_app())
 
 # 主页路由
 @app.get("/")
