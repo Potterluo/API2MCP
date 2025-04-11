@@ -1,0 +1,21 @@
+api_services:
+- name: get_ip
+  description: 获取当前所在位置的IP及位置信息（包含城市，adcode码等）
+  auth:
+    type: Key
+    params:
+      key: 
+  endpoint: https://restapi.amap.com/v3/ip
+  is_active: true
+- name: get_weather
+  description: 获取指定地区的天气信息
+  auth:
+    type: Key
+    params:
+      key: 
+  request:
+    method: GET
+    params:
+      city: city_adcode
+  endpoint: https://restapi.amap.com/v3/weather/weatherInfo
+  is_active: true

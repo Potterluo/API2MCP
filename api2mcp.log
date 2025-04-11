@@ -1,0 +1,91 @@
+2025-04-08 11:11:02,195 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:11:02,196 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:11:02,197 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:11:02,837 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:11:02,838 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:11:02,839 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:21:46,898 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:21:46,899 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:21:46,899 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:22:22,602 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:22:22,603 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:22:22,604 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:38:09,968 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:38:09,969 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:38:09,969 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:38:56,728 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:38:56,729 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:38:56,729 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:39:23,140 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:39:23,152 - mcp.server.config - INFO - 成功加载配置文件 config.yaml
+2025-04-08 11:39:23,153 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:39:23,154 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:39:23,155 - mcp.server.api2mcp-server - INFO - Registered tool: example_api
+2025-04-08 11:39:23,155 - mcp.server.api_mounter - INFO - 成功挂载API服务: example_api
+2025-04-08 11:39:23,155 - mcp.server.api_mounter - INFO - 成功挂载 1 个API服务
+2025-04-08 11:40:25,818 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:40:25,819 - mcp.server.config - INFO - 成功加载配置文件 config.yaml
+2025-04-08 11:40:25,820 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:40:25,820 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:40:25,821 - mcp.server.api2mcp-server - INFO - Registered tool: example_api
+2025-04-08 11:40:25,821 - mcp.server.api_mounter - INFO - 成功挂载API服务: example_api
+2025-04-08 11:40:25,821 - mcp.server.api_mounter - INFO - 成功挂载 1 个API服务
+2025-04-08 11:40:34,246 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:40:34,247 - mcp.server.config - INFO - 成功加载配置文件 config.yaml
+2025-04-08 11:40:34,248 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:40:34,249 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:40:34,249 - mcp.server.api2mcp-server - INFO - Registered tool: example_api
+2025-04-08 11:40:34,250 - mcp.server.api_mounter - INFO - 成功挂载API服务: example_api
+2025-04-08 11:40:34,250 - mcp.server.api_mounter - INFO - 成功挂载 1 个API服务
+2025-04-08 11:47:37,375 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:47:37,376 - mcp.server.config - INFO - 成功加载配置文件 config.yaml
+2025-04-08 11:47:37,377 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:47:37,378 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:47:37,378 - mcp.server.api2mcp-server - INFO - Registered tool: example_api
+2025-04-08 11:47:37,378 - mcp.server.api_mounter - INFO - 成功挂载API服务: example_api
+2025-04-08 11:47:37,379 - mcp.server.api_mounter - INFO - 成功挂载 1 个API服务
+2025-04-08 11:47:38,221 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:47:38,222 - mcp.server.config - INFO - 成功加载配置文件 config.yaml
+2025-04-08 11:47:38,223 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:47:38,223 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:47:38,224 - mcp.server.api2mcp-server - INFO - Registered tool: example_api
+2025-04-08 11:47:38,224 - mcp.server.api_mounter - INFO - 成功挂载API服务: example_api
+2025-04-08 11:47:38,224 - mcp.server.api_mounter - INFO - 成功挂载 1 个API服务
+2025-04-08 11:47:38,275 - mcp.server.api2mcp-server - INFO - Initialized FastMCP server: api2mcp-server
+2025-04-08 11:47:38,276 - mcp.server.config - INFO - 成功加载配置文件 config.yaml
+2025-04-08 11:47:38,276 - mcp.server.api2mcp-server - INFO - Registered tool: add
+2025-04-08 11:47:38,278 - mcp.server.api2mcp-server - INFO - Registered tool: calculate_bmi
+2025-04-08 11:47:38,278 - mcp.server.api2mcp-server - INFO - Registered tool: example_api
+2025-04-08 11:47:38,278 - mcp.server.api_mounter - INFO - 成功挂载API服务: example_api
+2025-04-08 11:47:38,279 - mcp.server.api_mounter - INFO - 成功挂载 1 个API服务
+2025-04-08 11:48:40,320 - mcp.server.api_mounter - INFO - 成功卸载API服务: example_api
+2025-04-08 11:48:40,321 - mcp.server.api2mcp-server - INFO - Registered tool: example_api
+2025-04-08 11:48:40,322 - mcp.server.api_mounter - INFO - 成功挂载API服务: example_api
+2025-04-08 14:22:36,436 - INFO - Processing request of type ListToolsRequest
+2025-04-08 14:22:36,452 - INFO - Processing request of type PingRequest
+2025-04-08 14:25:50,594 - INFO - Processing request of type ListToolsRequest
+2025-04-08 14:25:50,616 - INFO - Processing request of type PingRequest
+2025-04-08 14:35:05,083 - INFO - Processing request of type ListToolsRequest
+2025-04-08 14:35:05,107 - INFO - Processing request of type PingRequest
+2025-04-08 14:35:30,981 - INFO - Processing request of type PingRequest
+2025-04-08 14:35:43,482 - INFO - Processing request of type PingRequest
+2025-04-08 14:35:43,484 - INFO - Processing request of type CallToolRequest
+2025-04-08 14:36:10,987 - INFO - Processing request of type PingRequest
+2025-04-08 14:36:32,440 - INFO - Processing request of type PingRequest
+2025-04-08 14:36:36,688 - INFO - Processing request of type PingRequest
+2025-04-08 14:36:36,689 - INFO - Processing request of type CallToolRequest
+2025-04-08 14:38:47,493 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_ip
+2025-04-08 14:38:47,494 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_weather
+2025-04-08 14:38:54,965 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_ip
+2025-04-08 14:38:54,967 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_weather
+2025-04-08 14:39:05,375 - INFO - Processing request of type ListToolsRequest
+2025-04-08 14:39:05,394 - INFO - Processing request of type PingRequest
+2025-04-08 14:39:39,508 - INFO - 姝ｅ湪鍔犺浇閰嶇疆鏂囦欢...
+2025-04-08 14:39:39,509 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_ip
+2025-04-08 14:39:39,509 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_weather
+2025-04-08 14:39:40,562 - INFO - 姝ｅ湪鍔犺浇閰嶇疆鏂囦欢...
+2025-04-08 14:39:40,562 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_ip
+2025-04-08 14:39:40,563 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_weather
+2025-04-08 14:39:52,004 - INFO - 姝ｅ湪鍔犺浇閰嶇疆鏂囦欢...
+2025-04-08 14:39:52,004 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_ip
+2025-04-08 14:39:52,005 - INFO - 姝ｅ湪娉ㄥ唽API宸ュ叿: get_weather

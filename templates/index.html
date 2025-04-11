@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API2MCP 服务管理</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        },
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f4f4f5',
+                            200: '#e4e4e7',
+                            300: '#d4d4d8',
+                            400: '#a1a1aa',
+                            500: '#71717a',
+                            600: '#52525b',
+                            700: '#3f3f46',
+                            800: '#27272a',
+                            900: '#18181b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-neutral-50 font-sans antialiased">
+    <!-- 导航栏 -->
+    <nav class="bg-white border-b border-neutral-200 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-xl font-semibold text-primary-600 tracking-tight font-bold"><span class="mr-2"></span>🎯API2MCP</h1>
+                
+            </div>
+            <div class="flex items-center">
+                    <button id="addServiceBtn" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200">
+                        <i class="fas fa-plus mr-2"></i>
+                        添加服务
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-lg shadow">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-lg font-medium text-neutral-900">服务列表</h2>
+                    <button id="refreshBtn" class="text-primary-600 hover:text-primary-700">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-neutral-200">
+                        <thead class="bg-neutral-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">服务名称</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">描述</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">端点</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">状态</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-neutral-200">
+                            {% for service in services %}
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900">{{ service.name }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 truncate max-w-[200px]" title="{{ service.description }}">{{ service.description }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500 truncate max-w-[200px]" title="{{ service.endpoint }}">{{ service.endpoint }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {% if service.is_active %}bg-green-100 text-green-800{% else %}bg-red-100 text-red-800{% endif %}">
+                                        {{ '启用' if service.is_active else '禁用' }}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">
+                                    <button class="inline-flex items-center px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 mr-2 edit-btn" data-service-name="{{ service.name }}">
+                                        <i class="fas fa-edit mr-1"></i> 编辑
+                                    </button>
+                                    <button class="inline-flex items-center px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 mr-2 test-btn" data-service-name="{{ service.name }}">
+                                        <i class="fas fa-vial mr-1"></i> 测试
+                                    </button>
+                                    <button class="inline-flex items-center px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 delete-btn" data-service-name="{{ service.name }}">
+                                        <i class="fas fa-trash-alt mr-1"></i> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 添加/编辑服务模态框 -->
+    <div id="serviceModal" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-neutral-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <h3 class="text-lg leading-6 font-medium text-neutral-900 mb-4" id="modal-title">添加服务</h3>
+                    <form id="serviceForm">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="serviceName" class="block text-sm font-medium text-neutral-700">服务名称</label>
+                                <input type="text" id="serviceName" class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm">
+                            </div>
+                            <div>
+                                <label for="serviceDescription" class="block text-sm font-medium text-neutral-700">描述</label>
+                                <input type="text" id="serviceDescription" class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm">
+                            </div>
+                            <div>
+                                <label for="serviceEndpoint" class="block text-sm font-medium text-neutral-700">端点</label>
+                                <input type="text" id="serviceEndpoint" class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm">
+                            </div>
+                            <div>
+                                <label for="authType" class="block text-sm font-medium text-neutral-700">认证类型</label>
+                                <select id="authType" class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm">
+                                    <option value="none">无认证</option>
+                                    <option value="basic">Basic认证</option>
+                                    <option value="token">Token认证</option>
+                                    <option value="oauth">OAuth认证</option>
+                                </select>
+                            </div>
+                            <div id="authConfigContainer" class="space-y-4"></div>
+                            <div>
+                                <label for="requestMethod" class="block text-sm font-medium text-neutral-700">请求方法</label>
+                                <select id="requestMethod" class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm">
+                                    <option value="GET">GET</option>
+                                    <option value="POST">POST</option>
+                                    <option value="PUT">PUT</option>
+                                    <option value="DELETE">DELETE</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="requestParams" class="block text-sm font-medium text-neutral-700">请求参数 (JSON格式)</label>
+                                <textarea id="requestParams" rows="4" class="mt-1 block w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"></textarea>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="isActive" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded">
+                                <label for="isActive" class="ml-2 block text-sm text-neutral-700">启用服务</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="bg-neutral-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" id="saveServiceBtn" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-600 text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:ml-3 sm:w-auto sm:text-sm">保存</button>
+                    <button type="button" id="cancelBtn" class="mt-3 w-full inline-flex justify-center rounded-md border border-neutral-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 测试服务模态框 -->
+    <div id="testModal" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-neutral-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <h3 class="text-lg leading-6 font-medium text-neutral-900 mb-4">测试服务</h3>
+                    <div id="testResult" class="mt-4 p-4 bg-neutral-50 rounded-md font-mono text-sm overflow-x-auto"></div>
+                </div>
+                <div class="bg-neutral-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" id="runTestBtn" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-600 text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:ml-3 sm:w-auto sm:text-sm">运行测试</button>
+                    <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-neutral-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm close-modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
