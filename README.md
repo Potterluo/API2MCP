@@ -11,6 +11,8 @@ API2MCP是一个用于封装和管理API服务的工具，支持将各种API服�
   
 - 当前可通过'config.yaml'配置文件进行API倒入，Web页面暂不可用
 
+- higress https://higress.cn/ai/mcp-server/  Nacos3.0 已实现类似功能
+
 ## 功能截图
 
 ![配置截图](assets/pic1.png)
